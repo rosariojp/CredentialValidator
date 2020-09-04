@@ -24,5 +24,21 @@ public class CredentialValidatorTest {
 			assertFalse(CredentialValidator.isValidUsername(invalidUsername));
 		}
 	}
+	
+	@Test
+	public void checkValidPasswords() {
+		String[] validPasswords = { "JuanDe1@cruz", "P@ssw0rd_1234", "Abcde12345" };
+		for (String validPassword : validPasswords ) {
+			assertTrue(CredentialValidator.isValidPassword(validPassword));
+		}
+	}
+	
+	@Test
+	public void checkInvalidPasswords() {
+		String[] invalidPasswords = { "abcdefgh", "ABCDEFGH", "Sh0rt!", "To0L0ngP4s$worddDdd!adswazxd()", "doesn0thaveupp3r", "H4VEUPP3RBUTNOL0WER" };
+		for (String invalidPassword : invalidPasswords ) {
+			assertFalse(CredentialValidator.isValidPassword(invalidPassword));
+		}
+	}
 
 }

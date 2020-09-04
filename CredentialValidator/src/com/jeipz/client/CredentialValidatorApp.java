@@ -11,11 +11,14 @@ public class CredentialValidatorApp {
 	public static void main(String[] args) {
 		
 		Result result = JUnitCore.runClasses(CredentialValidatorTest.class);
-		for (Failure failure : result.getFailures()) {
-			System.out.println(failure.toString());
-		}
 		System.out.println((result.wasSuccessful()) ? "Test passed!" : "Test failed!");
-		System.out.println("Failure count: " + result.getFailureCount());
+		if (result.getFailureCount() > 0) {
+			System.out.println("Failure count: " + result.getFailureCount());
+			System.out.println("Failed test case(s):");
+			for (Failure failure : result.getFailures()) {
+				System.out.println("-> " + failure.getDescription());
+			}
+		}
 		
 	}
 	
