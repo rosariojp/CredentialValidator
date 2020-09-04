@@ -18,10 +18,10 @@ A class that can validate username and password according to the specifications
 1. Checking username validity
 ```
 String username = "juandelacruz";
-boolean isValid = isValidUsername(username);
+boolean isValid = CredentialValidator.isValidUsername(username);
 ```
 2. Checking password validity
 ```
 String password = "JuanDe1@cruz";
-boolean isValid = isValidPassword(password);
+boolean isValid = CredentialValidator.isValidPassword(password);
 ```
