@@ -1,5 +1,5 @@
 # CredentialValidator
-A class that can validate username and password
+A class that can validate username and password according to the specifications
 
 #### Username Specification
 * 8 to 12 alphanumeric characters long
